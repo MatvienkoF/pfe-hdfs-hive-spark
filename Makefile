@@ -16,7 +16,7 @@ download_hadoop:
 
 download_spark:
 	mkdir -p ${current_dir}tools
-	cd ${current_dir}tools; wget https://dl.dropboxusercontent.com/u/4882345/packages/spark-2.2.1-bin.tgz && tar -xvf spark-2.2.1-bin.tgz && rm -rf spark-2.2.1-bin.tgz
+	cd ${current_dir}tools; wget https://apache.crihan.fr/dist/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz && tar -xvf spark-2.2.1-bin-hadoop2.7.tgz && rm -rf spark-2.2.1-bin-hadoop2.7.tgz
 
 download_hive:
 	mkdir -p ${current_dir}tools
