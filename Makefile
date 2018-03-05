@@ -20,7 +20,7 @@ download_spark:
 
 download_hive:
 	mkdir -p ${current_dir}tools
-	cd ${current_dir}tools; wget http://www-us.apache.org/dist/hive/hive-2.1.0/apache-hive-2.3.2-bin.tar.gz && tar -xvf apache-hive-2.3.2-bin.tar.gz && rm -rf apache-hive-2.3.2-bin.tar.gz
+	cd ${current_dir}tools; wget http://www-us.apache.org/dist/hive/hive-2.3.2/apache-hive-2.3.2-bin.tar.gz && tar -xvf apache-hive-2.3.2-bin.tar.gz && rm -rf apache-hive-2.3.2-bin.tar.gz
 
 configure: configure_hadoop configure_spark
 
@@ -28,7 +28,7 @@ configure_hadoop:
 	#install Ubuntu dependencies
 	sudo apt-get install -y ssh rsync
 	#Set JAVA_HOME explicitly
-	sed -i "s#.*export JAVA_HOME.*#export JAVA_HOME=${JAVA_HOME}#g" ${hadoop_home}/etc/hadoop/hadoop-env.sh 
+	sed -i "s#.*export JAVA_HOME.*#export JAVA_HOME='/usr'#g" ${hadoop_home}/etc/hadoop/hadoop-env.sh 
 	#Set HADOOP_CONF_DIR explicitly
 	sed -i "s#.*export HADOOP_CONF_DIR.*#export HADOOP_CONF_DIR=${hadoop_home}/etc/hadoop#" ${hadoop_home}/etc/hadoop/hadoop-env.sh
 	#define fs.default.name in core-site.xml
